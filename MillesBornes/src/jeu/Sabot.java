@@ -32,7 +32,6 @@ public class Sabot implements Iterable<Carte> {
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Dépassement de capacité du tableau de cartes");
 		}
-
 	}
 
 	private void ajouterFamilleCarte(Carte carte) {

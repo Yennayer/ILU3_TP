@@ -39,7 +39,7 @@ public class Test {
 		}
 		// sabot.piocher(); ça génère une exception
 		*/
-		
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Test TP 02
 		/*
 		System.out.println("Test 01 :");
@@ -53,11 +53,11 @@ public class Test {
 		System.out.println("Test Equals 02 : "+cartes[2].equals(cartes[1]));
 		System.out.println("Test Equals 03 : "+cartes[0].equals(cartes[2]));
 		System.out.println("Test Equals 04 : "+cartes[0].equals(cartes[3]));
-		
+		*/
 		
 		/*
-		 * System.out.println("\nTest 02 :\n");
-		 * 
+		System.out.println("\nTest 02 :\n");
+		 
 		JeuDeCartes jeu = new JeuDeCartes();
 		List<Carte> listeCartes = jeu.getListeCartes();
 		System.out.println("Affichage de la liste : " + listeCartes);
@@ -73,12 +73,7 @@ public class Test {
 		List<Carte> listeCartes = new ArrayList<>(listeCarteNonMelangee);
 		System.out.println(listeCartes);
 		System.out.println("Verification avec CheckCount : " + jeu.checkCount());
-		
-		
-		//Carte carte = Utils.extraire(listeCartes);
-		//System.out.println(carte);
-		
-		
+
 		listeCartes = Utils.melanger(listeCartes);
 		System.out.println(listeCartes);
 		System.out.println("liste mélangée sans erreur ? "+ Utils.verifierMelange(listeCarteNonMelangee, listeCartes));
@@ -93,6 +88,7 @@ public class Test {
 		JeuDeCartes jeu2 = new JeuDeCartes();
 		List<Carte> listeCarteMelangee = jeu2.getListeCartes();
 		System.out.println(listeCarteMelangee);
+		System.out.println("Verification avec CheckCount : " + jeu2.checkCount());
 		
 	}
 }

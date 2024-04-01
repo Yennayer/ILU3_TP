@@ -18,6 +18,20 @@ public class Utils {
 		return carte;
 	}
 	
+	// En utilisant un itérateur
+	public static Carte extraireV2 (List<Carte> liste) {
+		Random random = new Random();
+		int index = random.nextInt(liste.size());
+		
+		ListIterator<Carte> it = liste.listIterator();
+        for (int i = 0; i < index; i++) {
+            it.next();
+        }
+		Carte carte = it.next();
+		it.remove();
+		return carte;
+	}
+	
 	
 	public static List<Carte> melanger(List<Carte> liste) {
 		List<Carte> resultat = new ArrayList<Carte>();
@@ -36,6 +50,7 @@ public class Utils {
 		return true;
 	}
 
+	// Pas trop sur
 	public static List<Carte> rassembler(List<Carte> liste) {
         List<Carte> listeRassemblee = new ArrayList<>();
         for (Carte carte: liste) {
@@ -48,6 +63,7 @@ public class Utils {
         return listeRassemblee;
     }
 	
+	// pas trop sur
     public static boolean verifierRassemblement(List<Carte> liste) {
         if (liste.isEmpty()) {
             return true;
