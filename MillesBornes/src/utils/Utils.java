@@ -24,9 +24,9 @@ public class Utils {
 		int index = random.nextInt(liste.size());
 		
 		ListIterator<Carte> it = liste.listIterator();
-        for (int i = 0; i < index; i++) {
-            it.next();
-        }
+		for (int i = 0; i < index; i++) {
+			it.next();
+		}
 		Carte carte = it.next();
 		it.remove();
 		return carte;
