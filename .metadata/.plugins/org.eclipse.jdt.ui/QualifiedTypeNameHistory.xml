@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="controleur.ControlVerifierIdentite"/>
+    <fullyQualifiedTypeName name="controleur.ControlPrendreEtal"/>
+    <fullyQualifiedTypeName name="personnages.Gaulois"/>
+    <fullyQualifiedTypeName name="villagegaulois.Etal"/>
+    <fullyQualifiedTypeName name="villagegaulois.Village"/>
+    <fullyQualifiedTypeName name="controleur.ControlPrendreEtalTest"/>
+    <fullyQualifiedTypeName name="controleur.ControlAfficherMarche"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+    <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+    <fullyQualifiedTypeName name="java.util.ConcurrentModificationException"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="jeu.Sabot"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+    <fullyQualifiedTypeName name="cartes.JeuDeCartes"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="cartes.Botte"/>
+    <fullyQualifiedTypeName name="cartes.Borne"/>
+    <fullyQualifiedTypeName name="cartes.Parade"/>
+    <fullyQualifiedTypeName name="cartes.Probleme.Type"/>
+    <fullyQualifiedTypeName name="cartes.Attaque"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="cartes.Limite"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="cartes.Carte"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="utils.Utils"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
