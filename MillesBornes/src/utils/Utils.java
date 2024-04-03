@@ -50,7 +50,7 @@ public class Utils {
 		return true;
 	}
 
-	// Pas trop sur
+	
 	public static List<Carte> rassembler(List<Carte> liste) {
         List<Carte> listeRassemblee = new ArrayList<>();
         for (Carte carte: liste) {
@@ -68,6 +68,7 @@ public class Utils {
         if (liste.isEmpty()) {
             return true;
         }
+        
         ListIterator<Carte> it1 = liste.listIterator();
         while (it1.hasNext()) {
             Carte carteCourante = it1.next();
