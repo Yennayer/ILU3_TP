@@ -25,5 +25,25 @@ public class ZoneDeJeu{
 		this.collectionDeBorne = new ArrayList<>();
 		this.ensembleDeBottes = new HashSet<>();
 	}
+	
+	public void ajouter(Limite limite) {
+		pileDeLimite.add(0, limite);
+	}
+	
+	public void ajouter(Bataille bataille) {
+		pileDeBataille.add(0, bataille);
+	}
+	
+	public void ajouter(Borne borne) {
+		collectionDeBorne.add(0, borne);
+	}
+	
+	public void ajouter(Carte carte) {
+		ensembleDeBottes.add(carte);
+	}
+	
+	public List<Borne> getBorne() {
+		return this.collectionDeBorne;
+	}
 
 }

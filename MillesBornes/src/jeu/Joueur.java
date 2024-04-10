@@ -2,6 +2,7 @@ package jeu;
 
 import java.util.List;
 
+import cartes.Borne;
 import cartes.Carte;
 
 public class Joueur {
@@ -17,6 +18,11 @@ public class Joueur {
 	
 	public String getNom() {
 		return nom;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 31*nom.hashCode();
 	}
 	
 	@Override
@@ -45,4 +51,17 @@ public class Joueur {
 		return carte;
 	}
 
+	public boolean deposer(Borne borne) {
+		zone.ajouter(borne);
+		return true;
+	}
+	
+	public int donnerKmParcourus() {
+		int distanceParcourue = 0;
+		for (Borne borne : zone.getBorne()) {
+			distanceParcourue += borne.getKm();
+		}
+		return distanceParcourue;
+	}
+	
 }

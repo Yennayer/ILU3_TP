@@ -8,16 +8,11 @@ public abstract class Probleme extends Carte {
 		ACCIDENT
 	};
 	
-	public Type type;
+	protected Type type;
 	
 	protected Probleme(int nombre, Type type) {
 		super(nombre);
 		this.type= type;
-	}
-	
-	@Override
-	public int getNombre() {
-		return super.getNombre();
 	}
 	
 	public Type getType() {
@@ -25,11 +20,10 @@ public abstract class Probleme extends Carte {
 	}
 	
 	public boolean equals(Object obj) {
-		// il faut appeler le super
-		if (obj instanceof Probleme probleme) {
-			return type.equals(probleme.getType()) && probleme.getClass().equals(getClass());
-		}
-		return false;
+		if (!super.equals(obj))
+			return false;
+		Probleme carte = (Probleme) obj;
+		return carte.type == type;
 	}
 	
 }

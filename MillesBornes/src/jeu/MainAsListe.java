@@ -7,31 +7,30 @@ import java.util.List;
 import cartes.Carte;
 
 public class MainAsListe implements IMain{
-	private List<Carte> liste;
+	private List<Carte> cartes;
 	public MainAsListe() {
-		this.liste = new ArrayList<Carte>();
+		this.cartes = new ArrayList<>();
 	}
 
 	@Override
 	public void prendre(Carte carte) {
-		liste.add(carte);
+		cartes.add(carte);
 	}
 
 	@Override
 	public void jouer(Carte carte) {
-		assert(liste.contains(carte));
-		liste.remove(carte);
+		assert (cartes.contains(carte)) : "La carte n'est pas dans la main";
+		cartes.remove(carte);
 	}
 	
 	@Override
 	public String toString() {
-		return "Je possède les cartes : " + liste + " .";
+		return "Je possède les cartes : " + cartes + " .";
 	}
 
 	@Override
 	public Iterator<Carte> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return cartes.iterator();
 	}
 
 }

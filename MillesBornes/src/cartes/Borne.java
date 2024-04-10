@@ -8,10 +8,6 @@ public class Borne extends Carte {
 		this.km = km;
 	}
 
-	@Override
-	public int getNombre() {
-		return super.getNombre();
-	}
 
 	public int getKm() {
 		return km;
@@ -24,10 +20,10 @@ public class Borne extends Carte {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Borne borne) {
-			return km == borne.getKm() && borne.getClass().equals(getClass());
-			}
-		return false;
+		if(!super.equals(obj))
+			return false;
+		
+		Borne carte = (Borne) obj;
+		return carte.km == km;
 	}
-	// il faut utiliser le super
 }
