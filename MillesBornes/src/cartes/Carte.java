@@ -3,7 +3,7 @@ package cartes;
 public abstract class Carte {
 	private int nombre;
 	
-	public Carte(int nombre) {
+	protected Carte(int nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -14,4 +14,13 @@ public abstract class Carte {
 	public void setNombre(int nombre) {
 		this.nombre = nombre;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Carte carte) {
+			return carte.getClass().equals(getClass());
+		}
+		return false;
+	}
+	
 }

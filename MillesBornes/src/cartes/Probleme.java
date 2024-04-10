@@ -25,6 +25,7 @@ public abstract class Probleme extends Carte {
 	}
 	
 	public boolean equals(Object obj) {
+		// il faut appeler le super
 		if (obj instanceof Probleme probleme) {
 			return type.equals(probleme.getType()) && probleme.getClass().equals(getClass());
 		}

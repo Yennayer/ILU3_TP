@@ -2,6 +2,7 @@ package utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
@@ -9,18 +10,17 @@ import java.util.Random;
 import cartes.Carte;
 
 public class Utils {
-
+	static Random random = new Random();
 	public static Carte extraire(List<Carte> liste) {
-		Random random = new Random();
+		
 		int index = random.nextInt(liste.size());
-		Carte carte = liste.get(index);
-		liste.remove(index);
-		return carte;
+		//Carte carte = liste.get(index);
+		
+		return liste.remove(index);
 	}
 	
 	// En utilisant un itérateur
 	public static Carte extraireV2 (List<Carte> liste) {
-		Random random = new Random();
 		int index = random.nextInt(liste.size());
 		
 		ListIterator<Carte> it = liste.listIterator();
@@ -34,7 +34,7 @@ public class Utils {
 	
 	
 	public static List<Carte> melanger(List<Carte> liste) {
-		List<Carte> resultat = new ArrayList<Carte>();
+		List<Carte> resultat = new ArrayList<>();
 		while (!liste.isEmpty()) {
 			resultat.add(extraire(liste));
 		}
@@ -43,6 +43,12 @@ public class Utils {
 
 	public static boolean verifierMelange(List<Carte> liste1, List<Carte> liste2) {
 		for (Carte carte: liste1) {
+			if (Collections.frequency(liste1, carte) != Collections.frequency(liste2, carte)) {
+				return false;
+			}
+		}
+		
+		for (Carte carte: liste2) {
 			if (Collections.frequency(liste1, carte) != Collections.frequency(liste2, carte)) {
 				return false;
 			}
@@ -63,28 +69,33 @@ public class Utils {
         return listeRassemblee;
     }
 	
-	// pas trop sur
+	private static boolean verifierRassemblementAuxiliaire(int indice, Carte carte, List<Carte> liste) {
+		for(ListIterator<Carte> it = liste.listIterator(indice); it.hasNext();) {
+			Carte carteCourrante = it.next();
+			if (carteCourrante.equals(carte)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
     public static boolean verifierRassemblement(List<Carte> liste) {
         if (liste.isEmpty()) {
             return true;
         }
-        
-        ListIterator<Carte> it1 = liste.listIterator();
-        while (it1.hasNext()) {
-            Carte carteCourante = it1.next();
-            ListIterator<Carte> it2 = liste.listIterator(it1.nextIndex());
-            while (it2.hasNext()) {
-                Carte carteNext = it2.next();
-                if (!carteCourante.equals(carteNext)) {
-                    break; // Si une différence est trouvée, interrompre la vérification
-                }
-                if (!it1.hasNext()) {
-                    return true; // Si tous les éléments sont identiques et consécutifs, retourner vrai
-                }
-                carteCourante = it1.next(); // Avancer à l'élément suivant dans le premier itérateur
-            }
+        Carte cartePrecedente = liste.get(0); 
+        for (ListIterator<Carte> it1 = liste.listIterator();it1.hasNext();) {
+			Carte carteCourrante = it1.next();
+			while (it1.hasNext() && carteCourrante.equals(cartePrecedente)) {
+				cartePrecedente = carteCourrante;
+				carteCourrante = it1.next();
+			}
+			if (verifierRassemblementAuxiliaire(it1.previousIndex(), cartePrecedente, liste)) {
+				return false;
+			}
+			
         }
-        return false; // Si aucun groupe d'éléments identiques consécutifs n'est trouvé, retourner faux
-    }
+		return true;	
+	}
 
 }

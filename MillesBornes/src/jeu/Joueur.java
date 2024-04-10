@@ -1,14 +1,20 @@
 package jeu;
 
+import java.util.List;
+
+import cartes.Carte;
+
 public class Joueur {
 	private String nom;
 	private ZoneDeJeu zone;
-	public Joueur(String nom, ZoneDeJeu zone) {
+	private MainAsListe main;
+	
+	public Joueur(String nom) {
 		this.nom = nom;
-		this.zone = zone;
+		this.zone = new ZoneDeJeu();
+		this.main = new MainAsListe();
 	}
 	
-	// Accesseur
 	public String getNom() {
 		return nom;
 	}
@@ -25,5 +31,18 @@ public class Joueur {
 		return nom;
 	}
 	
+	public void donner(Carte carte){
+		main.prendre(carte);
+	}
 	
+	public Carte prendreCarte(List<Carte> sabot) {
+		Carte carte = null;
+		if (sabot.isEmpty()) {
+			return carte;
+		}
+		carte = sabot.get(0);
+		donner(carte);
+		return carte;
+	}
+
 }

@@ -29,5 +29,5 @@ public class Borne extends Carte {
 			}
 		return false;
 	}
-
+	// il faut utiliser le super
 }

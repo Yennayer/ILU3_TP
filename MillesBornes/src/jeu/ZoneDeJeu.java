@@ -7,19 +7,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import cartes.Bataille;
+import cartes.Borne;
 import cartes.Carte;
+import cartes.Limite;
 
-public class ZoneDeJeu extends Carte{
+public class ZoneDeJeu{
 
-	private List<Carte> pileDeLimite = new ArrayList<>();
-	private List<Carte> pileFinDeLimite = new ArrayList<>();
-	private List<Carte> pileDeBataille = new ArrayList<>();
-	//private Collections<Carte> borne = new Collection<>() {};
-	private Set<Carte> ensembleDeBottes= new HashSet<>();
+	private List<Limite> pileDeLimite;
+	private List<Bataille> pileDeBataille;
+	private List<Borne> collectionDeBorne;
+	private Set<Carte> ensembleDeBottes;
 	
-	public ZoneDeJeu(int nombre) {
-		super(nombre);
-		// TODO Auto-generated constructor stub
+	public ZoneDeJeu() {
+		this.pileDeLimite = new ArrayList<>();
+		this.pileDeBataille = new ArrayList<>();
+		this.collectionDeBorne = new ArrayList<>();
+		this.ensembleDeBottes = new HashSet<>();
 	}
 
 }
