@@ -13,12 +13,13 @@ public class TestJoueur {
 		
 		Borne borne1 = new Borne(10, 25);
 		Borne borne2 = new Borne(1, 50);
-		List<Borne> listesBorne = new ArrayList<>();
-		for(int i=0; i < 5; i++) {
-			listesBorne.add(borne2);
-		}
-		
-		
+    	
+    	joueur.deposer(borne1);
+    	joueur.deposer(borne2);
+    	
+    	
+
+    	System.out.println(joueur.donnerKmParcourus());
 		
 	}
 	

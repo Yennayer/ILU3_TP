@@ -57,11 +57,6 @@ public class Joueur {
 	}
 	
 	public int donnerKmParcourus() {
-		int distanceParcourue = 0;
-		for (Borne borne : zone.getBorne()) {
-			distanceParcourue += borne.getKm();
-		}
-		return distanceParcourue;
+		return zone.donnerKm();
 	}
-	
 }

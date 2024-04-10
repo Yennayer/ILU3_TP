@@ -46,4 +46,11 @@ public class ZoneDeJeu{
 		return this.collectionDeBorne;
 	}
 
+	public int donnerKm() {
+		int distanceParcourue = 0;
+		for (Borne borne : collectionDeBorne) {
+			distanceParcourue += borne.getKm();
+		}
+		return distanceParcourue;
+	}
 }
